@@ -11,9 +11,9 @@ Phase 0 PartB
 Phase 1
    x add a backend data model and seed some data
 Phase 2
-    and a GET api route which will be used to on the front end to return all of your data
-    example GET /api/your_model_name_pluralized_goes_here (ie things, people, pets, etc.. etc.)
-    add a POST route which will randomly generate a new item (you can test this with curl)
+   x add a GET api route which will be used to on the front end to return all of your data
+   x example GET /api/your_model_name_pluralized_goes_here (ie things, people, pets, etc.. etc.)
+   x add a POST route which will randomly generate a new item (you can test this with curl)
 Phase 3
     add a GET / route to return index.html
     make sure to add a static route so that the webpack generated file can be returned to the client
