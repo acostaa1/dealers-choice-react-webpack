@@ -3,6 +3,12 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
+//adding path to connect HTML
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+
+//adding static path webpack file sent to client
+app.use('/dist', express.static(path.join(__dirname, 'dist')));
+
 const startUp = async () => {
   try {
     await syncDB(); //syncs DB

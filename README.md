@@ -15,8 +15,8 @@ Phase 2
    x example GET /api/your_model_name_pluralized_goes_here (ie things, people, pets, etc.. etc.)
    x add a POST route which will randomly generate a new item (you can test this with curl)
 Phase 3
-    add a GET / route to return index.html
-    make sure to add a static route so that the webpack generated file can be returned to the client
+   x add a GET / route to return index.html
+   x make sure to add a static route so that the webpack generated file can be returned to the client
 Phase 4
     setup a React application which will load the data from your backend route by making an axios call.
 Phase 5
