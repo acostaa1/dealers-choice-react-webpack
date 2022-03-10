@@ -11,7 +11,16 @@ class App extends React.Component {
         this.state = {
             groceries: [],
             selectedGroceryId: '',
-        }
+        };
+        this.create= this.create.bind(this);
+        
+    }
+    async create() {
+        const item = (await axios.post('/api/groceries')).data;
+        console.log(item)
+        this.state.groceries.push(item);
+        this.setState({groceries})
+        
     }
     async componentDidMount(){
         try {
@@ -27,7 +36,7 @@ class App extends React.Component {
             <div>
                 <div className='new'> 
                     <h3>Add <i>Expensive</i> Items To Your List</h3>
-                    <form>
+                    <form >
                         <label >Item</label> 
                         <input name = "name" placeholder = "what do you need?"/>
                         <label className = "section">Section</label>
@@ -38,7 +47,7 @@ class App extends React.Component {
                             </select>
                         <label className = "price">Price $</label>
                         <input name= "price" placeholder = "hint: it should be pricey"/>
-                        <button className = "add">Add Item</button>
+                        <button  className = "add">Add Item</button>
                     </form>
                 </div>
                 <div>

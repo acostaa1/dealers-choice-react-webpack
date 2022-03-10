@@ -42,7 +42,17 @@ app.get('/api/groceries', async (req, res, next) => {
 app.post ('/api/groceries', async (req,res,next)=> {
     try {
         const item = await Grocery.create(req.body);
-        res.send(item)
+        res.status(201).send(item)
+    } catch (error) {
+        next(error)
+    }
+})
+
+app.delete('/api/groceries/:id', async (req, rex, next)=> {
+    try {
+        const item = Grocery.findByPk(req.params.id);
+        await item.desroy();
+        res.sendStatus(204);
     } catch (error) {
         next(error)
     }
