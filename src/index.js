@@ -25,9 +25,27 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <ul>
-                    {this.state.groceries.map(item => <li key = {item.id}>{item.name}   <button className = 'delete'>X</button> </li>)}
-                </ul>
+                <div className='new'> 
+                    <h3>Add <i>Expensive</i> Items To Your List</h3>
+                    <form>
+                        <label >Item</label> 
+                        <input name = "name" placeholder = "what do you need?"/>
+                        <label className = "section">Section</label>
+                            <select name = "section">
+                                {this.state.groceries.map(item => {
+                                    return (<option key= {item.id}> {item.section} </option>)
+                                })}
+                            </select>
+                        <label className = "price">Price $</label>
+                        <input name= "price" placeholder = "hint: it should be pricey"/>
+                        <button className = "add">Add Item</button>
+                    </form>
+                </div>
+                <div>
+                    <ul>
+                        {this.state.groceries.map(item => <li key = {item.id}>{item.name}   <button className = 'delete'>X</button> </li>)}
+                    </ul>
+                </div>
             </div>
         )
     }

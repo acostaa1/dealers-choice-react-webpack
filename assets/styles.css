@@ -1,15 +1,24 @@
 body {
     padding: 1rem;
 }
+.add {
+    background-color: rgb(141, 182, 141)
+}
 
 .delete {
-    background-color: red;
+    background-color: salmon;
 }
 
 li {
     padding: .5rem;
 }
 
-button {
+
+label {
+    margin-right: 10px;
+}
+
+ button, .section, .price {
     margin-left: 10px;
+
 }
