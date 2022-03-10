@@ -1,0 +1,15 @@
+body {
+    padding: 1rem;
+}
+
+.delete {
+    background-color: red;
+}
+
+li {
+    padding: .5rem;
+}
+
+button {
+    margin-left: 10px;
+}
