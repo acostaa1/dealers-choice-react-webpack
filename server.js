@@ -39,9 +39,9 @@ app.get('/api/groceries', async (req, res, next) => {
 
 })
 
-app.post ('/api/groceries', async (req,res,next)=> {
+app.post ('/api/groceries/:name/:section/:price', async (req,res,next)=> {
     try {
-        const item = await Grocery.create(req.body);
+        const item = await Grocery.create(req.params);
         res.status(201).send(item)
     } catch (error) {
         next(error)

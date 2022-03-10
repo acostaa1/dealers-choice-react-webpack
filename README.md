@@ -20,7 +20,7 @@ Phase 3
 Phase 4
    x setup a React application which will load the data from your backend route by making an axios call.
 Phase 5
-    add the ability for a user to insert an item by calling the POST route you created. Make sure the new item is displayed.
+   x add the ability for a user to insert an item by calling the POST route you created. Make sure the new item is displayed.
 Phase 6
     deploy your application
 Phase n+ (extra credit)
