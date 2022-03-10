@@ -18,7 +18,7 @@ Phase 3
    x add a GET / route to return index.html
    x make sure to add a static route so that the webpack generated file can be returned to the client
 Phase 4
-    setup a React application which will load the data from your backend route by making an axios call.
+   x setup a React application which will load the data from your backend route by making an axios call.
 Phase 5
     add the ability for a user to insert an item by calling the POST route you created. Make sure the new item is displayed.
 Phase 6

@@ -9,6 +9,9 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 //adding static path webpack file sent to client
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
+//adding this to connect to my CSS file
+app.use('/assets', express.static(path.join(__dirname, 'assets')))
+
 const startUp = async () => {
   try {
     await syncDB(); //syncs DB
