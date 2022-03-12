@@ -22,8 +22,8 @@ Phase 4
 Phase 5
    x add the ability for a user to insert an item by calling the POST route you created. Make sure the new item is displayed.
 Phase 6
-    deploy your application
+   x deploy your application
 Phase n+ (extra credit)
-    add ability to delete data
-    style your application
+   x add ability to delete data
+   x style your application
     add some tests -->

@@ -18,6 +18,9 @@ const Grocery = sequelize.define('grocery', {
     }
 })
 
+Grocery.generateRandom = () => {
+    return Grocery.create({name: `Green Eggs & Ham`, section: 'Dairy', price: 10000})
+}
 
 const syncDB = async () => {
     try {

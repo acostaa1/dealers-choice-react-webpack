@@ -22,9 +22,18 @@ class App extends React.Component {
     }
     async create(name, section, price) {
         const item = (await axios.post(`/api/groceries/${name}/${section}/${price}`)).data;
-        this.state.groceries.push(item);
+        const groceries = [...this.state.groceries, item];
         this.setState({groceries})
-        
+    }
+    async createRandom() {
+        const item = (await axios.post(`/api/groceries/`)).data;
+        const groceries = [...this.state.groceries, item];
+        this.setState({groceries})
+    }
+    async remove(item) {
+        await axios.delete(`/api/groceries/${item.id}`);
+        const groceries = this.state.groceries.filter((_item) => _item.id !== item.id)
+        this.setState({groceries})
     }
     nameChange(event) {
         this.setState({inputGroceryName: event.target.value})
@@ -37,6 +46,9 @@ class App extends React.Component {
     priceChange(event) {
         this.setState({inputGroceryPrice: event.target.value})
 
+    }
+    handleClick = () => {
+        this.createRandom()
     }
     
     async componentDidMount(){
@@ -70,17 +82,21 @@ class App extends React.Component {
                         <label className = "price">Price $</label>
                         <input name= "price" placeholder = "hint: it should be pricey" onChange = {this.priceChange}/>
                         <button type = "submit" className = "add" >Add Item</button>
+                        <button className ="lucky" onClick={this.handleClick}>I'm Feeling Lucky!</button>
                     </form>
                 </div>
                 <div>
                     <ul>
-                        {this.state.groceries.map(item => <li key = {item.id}>{item.name}   <button className = 'delete'>X</button> </li>)}
+                        {this.state.groceries.map(item => <li key = {item.id}>{item.name} can be found in the {item.section} section, and will cost ${item.price} <button onClick = {()=> this.remove(item)}className = 'delete'>X</button> </li>)}
                     </ul>
                 </div>
             </div>
         )
         return(
+            <div>
             <h1>loading...</h1>
+            <button className ="lucky" onClick={this.handleClick}>I'm Feeling Lucky!</button>
+            </div>
         )
     }
 }

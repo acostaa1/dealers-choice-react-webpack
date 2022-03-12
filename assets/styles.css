@@ -9,6 +9,10 @@ body {
     background-color: salmon;
 }
 
+.lucky {
+    background-color:orange
+}
+
 li {
     padding: .5rem;
 }

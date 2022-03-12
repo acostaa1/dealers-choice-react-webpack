@@ -48,10 +48,18 @@ app.post ('/api/groceries/:name/:section/:price', async (req,res,next)=> {
     }
 })
 
-app.delete('/api/groceries/:id', async (req, rex, next)=> {
+app.post('/api/groceries', async (req, res, next)=> {
     try {
-        const item = Grocery.findByPk(req.params.id);
-        await item.desroy();
+        res.status(201).send(await Grocery.generateRandom())
+    } catch (error) {
+        next (error)
+    }
+})
+
+app.delete('/api/groceries/:id', async (req, res, next)=> {
+    try {
+        const item = await Grocery.findByPk(req.params.id);
+        await item.destroy();
         res.sendStatus(204);
     } catch (error) {
         next(error)
